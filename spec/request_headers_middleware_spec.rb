@@ -10,7 +10,6 @@ describe RequestHeadersMiddleware::Middleware do
 
     it "passes the request through unchanged" do
       subject.call(env)
-      byebug
       expect(app['CONTENT_TYPE']).to eq('text/plain')
     end
   end
