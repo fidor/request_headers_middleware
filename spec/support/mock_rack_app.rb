@@ -1,5 +1,5 @@
+# frozen_string_literal: true
 class MockRackApp
-
   attr_reader :request_body
 
   def initialize
@@ -9,11 +9,10 @@ class MockRackApp
   def call(env)
     @env = env
     @request_body = env['rack.input'].read
-    [200, {'Content-Type' => 'text/plain'}, ['OK']]
+    [200, { 'Content-Type' => 'text/plain' }, ['OK']]
   end
 
   def [](key)
     @env[key]
   end
-
 end
