@@ -1,4 +1,4 @@
-# RequestHeaderMiddleware [![build status](https://travis-ci.org/marcgrimme/request_headers_middleware.png?branch=master)](https://travis-ci.org/marcgrimme/request_headers_middleware) [![Code Climate](https://codeclimate.com/github/marcgrimme/request_headers_middleware.png)](https://codeclimate.com/github/marcgrimme/request_headers_middleware)
+# RequestHeaderMiddleware [![build status](https://travis-ci.org/MarcGrimme/request_headers_middleware.png?branch=master)](https://travis-ci.org/MarcGrimme/request_headers_middleware) [![Code Climate](https://codeclimate.com/github/MarcGrimme/request_headers_middleware.png)](https://codeclimate.com/github/MarcGrimme/request_headers_middleware)
 
 If you decided to go the microservice approach and services are growing everywhere you will release challenges as soon as more 
 service are interconnected and you need to figure out problems. 
