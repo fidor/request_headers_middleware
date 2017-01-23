@@ -104,6 +104,10 @@ The same holds for the blacklist but first you need to disable the whitelist by 
 Rails.configuration.request_headers_middleware.whitelist = [ 'X-Request-Id'  ]
 ``
 
+### Callbacks
+
+TODO: when I remeber why I thought this might make sense.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.

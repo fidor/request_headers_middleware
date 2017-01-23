@@ -1,12 +1,13 @@
+# frozen_string_literal: true
 require 'byebug'
 require 'request_headers_middleware/railtie' if defined?(Rails)
 require 'request_headers_middleware/middleware'
 
-module RequestHeadersMiddleware
+module RequestHeadersMiddleware # :nodoc:
   extend self
 
   attr_accessor :blacklist, :whitelist, :callbacks
-  @whitelist = [ 'x-request-id'.to_sym ]
+  @whitelist = ['x-request-id'.to_sym]
   @blacklist = []
   @callbacks = []
 
@@ -15,8 +16,12 @@ module RequestHeadersMiddleware
   end
 
   def setup(config)
-    @whitelist = config.whitelist.map{|key| key.downcase.to_sym } if config.whitelist
-    @blacklist = config.blacklist.map{|key| key.downcase.to_sym } if config.blacklist
-    @callbacks = config.callbacks if config.callbacks
+    if config.whitelist
+      @whitelist = config.whitelist.map { |key| key.downcase.to_sym }
+    end
+    if config.blacklist
+      @blacklist = config.blacklist.map { |key| key.downcase.to_sym }
+    end
+    config.callbacks && @callbacks = config.callbacks
   end
 end
