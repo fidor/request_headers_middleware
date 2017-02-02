@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-require 'byebug'
 require 'request_headers_middleware/railtie' if defined?(Rails)
 require 'request_headers_middleware/middleware'
 
