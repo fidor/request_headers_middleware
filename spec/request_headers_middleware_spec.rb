@@ -13,6 +13,10 @@ describe RequestHeadersMiddleware::Middleware do
                                               'CONTENT_TYPE' => 'text/plain')
     end
 
+    it 'returns an empty Hash by default' do
+      expect(RequestHeadersMiddleware.store).to eq({})
+    end
+
     it 'only saves the X-Request-Id in RequestHeadersMiddleware.store' do
       subject.call(env)
       expect(app['CONTENT_TYPE']).to eq('text/plain')
