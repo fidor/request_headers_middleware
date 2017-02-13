@@ -11,7 +11,7 @@ module RequestHeadersMiddleware # :nodoc:
   @callbacks = []
 
   def store
-    RequestStore[:headers]
+    RequestStore[:headers] ||= {}
   end
 
   def setup(config)
