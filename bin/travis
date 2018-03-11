@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+case "$BUILD_TYPE" in
+  "rubocop")
+    bundle exec rubocop
+    ;;
+   "rspec")
+    bundle exec rspec
+    ;;
+esac
