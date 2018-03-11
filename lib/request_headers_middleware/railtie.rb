@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module RequestHeadersMiddleware
   # The Railtie triggering a setup from RAILs to make it configurable
   class Railtie < ::Rails::Railtie
