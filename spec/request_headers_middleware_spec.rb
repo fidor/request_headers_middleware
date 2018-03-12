@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'spec_helper'
 
 describe RequestHeadersMiddleware::Middleware do
@@ -60,7 +61,7 @@ describe RequestHeadersMiddleware::Middleware do
 
     context 'with callbacks' do
       before do
-        RequestHeadersMiddleware.whitelist = [:'x-request-id', :'x-request-id1']
+        RequestHeadersMiddleware.whitelist = %I[x-request-id x-request-id1]
         RequestHeadersMiddleware.blacklist = []
         RequestHeadersMiddleware.callbacks = [
           proc { |env| env['HTTP_X_REQUEST_ID'] = '4321' },

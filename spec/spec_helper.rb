@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # Notice there is a .rspec file in the root folder. It defines rspec arguments
 
 # Ruby 1.9 uses simplecov. The ENV['COVERAGE'] is set when rake coverage
@@ -10,12 +11,12 @@ if ENV['COVERAGE']
     # included.
     # For more config options see
     # https://github.com/colszowka/simplecov
-    add_filter File.expand_path('../../spec', __FILE__)
+    add_filter File.expand_path('../spec', __dir__)
   end
 end
 
 # Modify load path so you can require 'ogstasher directly.
-$LOAD_PATH.unshift(File.expand_path('../../lib', __FILE__))
+$LOAD_PATH.unshift(File.expand_path('../lib', __dir__))
 
 require 'rubygems'
 # Loads bundler setup tasks. Now if I run spec without installing gems then it
@@ -28,7 +29,7 @@ require 'bundler/setup'
 # have to require some gems if they are part of bigger gem like ActiveRecord
 # which is part of Rails. You can say :require => false in gemfile to always
 # use explicit requiring
-Bundler.require(:default, :test)
+Bundler.require(:test)
 
 Dir[File.join('./spec/support/**/*.rb')].each { |f| require f }
 

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
-# -*- encoding: utf-8 -*-
-lib = File.expand_path('../lib', __FILE__)
+
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'request_headers_middleware/version'
 
@@ -20,9 +20,9 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
 
   gem.add_dependency 'request_store'
+  gem.add_development_dependency 'rack'
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'rspec'
-  gem.add_development_dependency 'rack'
-  gem.add_development_dependency 'simplecov'
   gem.add_development_dependency 'rubocop'
+  gem.add_development_dependency 'simplecov'
 end
