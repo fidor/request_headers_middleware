@@ -11,7 +11,7 @@ Gem::Specification.new do |gem|
   gem.email         = ['marc.grimme@gmail.com']
   gem.description   = 'RequestHeader gives you per-req global header storage.'
   gem.summary       = 'RequestStore gives you per-reqt global header storage.'
-  gem.homepage      = 'http://github.com/marcgrimme/request_headers_middleware'
+  gem.homepage      = 'http://github.com/fidor/request_headers_middleware'
   gem.licenses      = ['MIT']
 
   gem.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
@@ -19,10 +19,10 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ['lib']
 
-  gem.add_dependency 'request_store'
-  gem.add_development_dependency 'rack'
-  gem.add_development_dependency 'rake'
-  gem.add_development_dependency 'rspec'
-  gem.add_development_dependency 'rubocop'
-  gem.add_development_dependency 'simplecov'
+  gem.add_dependency 'request_store', '~> 1.4', '>= 1.4.0'
+  gem.add_development_dependency 'rack', '~> 1.6', '>= 1.6.5'
+  gem.add_development_dependency 'rake', '~> 12.0', '>= 12.0.0'
+  gem.add_development_dependency 'rspec', '~> 3.5', '>= 3.5.0'
+  gem.add_development_dependency 'rubocop', '~> 0.53.0'
+  gem.add_development_dependency 'simplecov', '~> 0.12.0'
 end

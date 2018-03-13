@@ -6,5 +6,5 @@ source 'https://rubygems.org'
 gemspec
 
 group :test, :development do
-  gem 'byebug'
+  gem 'byebug', '~> 9.0.6'
 end
