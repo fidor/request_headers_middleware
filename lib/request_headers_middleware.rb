@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-require 'request_headers_middleware/railtie' if defined?(Rails)
-require 'request_headers_middleware/middleware'
-
 module RequestHeadersMiddleware # :nodoc:
   extend self
 
@@ -26,3 +23,7 @@ module RequestHeadersMiddleware # :nodoc:
     config.callbacks && @callbacks = config.callbacks
   end
 end
+
+require 'request_headers_middleware/middleware'
+require 'request_headers_middleware/sidekiq_extensions' if defined?(Sidekiq)
+require 'request_headers_middleware/railtie' if defined?(Rails)

@@ -31,6 +31,7 @@ require 'bundler/setup'
 # use explicit requiring
 Bundler.require(:test)
 
+require 'sidekiq'
 Dir[File.join('./spec/support/**/*.rb')].each { |f| require f }
 
 # Set Rails environment as test

@@ -6,6 +6,7 @@ module RequestHeadersMiddleware # :nodoc:
   # The Middleware that stores the header. Default is only to store the
   # X-Request-Id or the action_dispatch.request_id from environment if not set.
   class Middleware
+    REQUEST_ID_HEADER = 'X-Request-Id'.to_sym
     def initialize(app)
       @app = app
     end
@@ -55,7 +56,10 @@ module RequestHeadersMiddleware # :nodoc:
     end
 
     def default_headers(env)
-      { "X-Request-Id": env['action_dispatch.request_id'] }
+      {
+        ::RequestHeadersMiddleware::Middleware::REQUEST_ID_HEADER =>
+          env['action_dispatch.request_id']
+      }
     end
   end
 end
