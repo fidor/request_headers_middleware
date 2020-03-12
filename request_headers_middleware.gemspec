@@ -19,6 +19,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ['lib']
 
+  gem.add_dependency 'faraday_middleware', '~> 0.9'
   gem.add_dependency 'request_store', '~> 1.4', '>= 1.4.0'
   gem.add_development_dependency 'rack', '~> 1.6', '>= 1.6.5'
   gem.add_development_dependency 'rake', '~> 12.0', '>= 12.0.0'

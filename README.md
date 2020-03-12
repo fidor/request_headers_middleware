@@ -76,6 +76,13 @@ Faraday.new(
 ) 
 ```
 
+Or you can use middleware:
+```ruby
+connection = Faraday.new 'http://example.com/api' do |conn|
+  conn.use RequestHeadersMiddleware::FaradayMiddleware
+end
+```
+
 ### JsonApiClient
 
 For a class extended from *JsonApiClient* it could work like this. Let's call the class *MyJsonApiClient*.
@@ -84,6 +91,15 @@ For a class extended from *JsonApiClient* it could work like this. Let's call th
 MyJsonApiClient.with_headers(RequestHeadersMiddleware.store) do
   .. # Do the request by the MyJsonApiClient
 end
+```
+
+Another option is to use it globally for any request by using middleware:
+
+```ruby
+connection do |conn|
+  conn.use RequestHeadersMiddleware::FaradayMiddleware
+end
+
 ```
 
 ### Whitelist
