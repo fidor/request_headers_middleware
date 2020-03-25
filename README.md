@@ -79,7 +79,7 @@ Faraday.new(
 Or you can use middleware:
 ```ruby
 connection = Faraday.new 'http://example.com/api' do |conn|
-  conn.use RequestHeadersMiddleware::FaradayMiddleware
+  conn.use RequestHeadersMiddleware::FaradayAdapter
 end
 ```
 
@@ -97,7 +97,7 @@ Another option is to use it globally for any request by using middleware:
 
 ```ruby
 connection do |conn|
-  conn.use RequestHeadersMiddleware::FaradayMiddleware
+  conn.use RequestHeadersMiddleware::FaradayAdapter
 end
 
 ```
