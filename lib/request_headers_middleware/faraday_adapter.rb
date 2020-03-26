@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'faraday_middleware'
+
 module RequestHeadersMiddleware
   class FaradayAdapter < Faraday::Middleware
     def call(env)
