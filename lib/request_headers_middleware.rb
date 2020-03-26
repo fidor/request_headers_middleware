@@ -2,6 +2,7 @@
 
 require 'request_headers_middleware/railtie' if defined?(Rails)
 require 'request_headers_middleware/middleware'
+require 'request_headers_middleware/faraday_adapter'
 
 module RequestHeadersMiddleware # :nodoc:
   extend self
